@@ -3,13 +3,11 @@ const email_input = document.getElementById('email-input');
 const password_input = document.getElementById('password-input');
 const error_message = document.getElementById('error-message');
 
-const hardcodedEmail = 'abdul@gmail.com'; // Example email
-const hardcodedPassword = '1234'; // Example password
+const hardcodedEmail = 'abdul@gmail.com'; 
+const hardcodedPassword = '1234'; 
 
 form.addEventListener('submit', (e) => {
-  e.preventDefault(); // Prevent the form from submitting
-
-  // Clear any previous error messages
+  e.preventDefault(); 
   error_message.innerText = '';
 
   const email = email_input.value;
@@ -29,15 +27,12 @@ form.addEventListener('submit', (e) => {
 
   if (errors.length > 0) {
     error_message.innerText = errors.join(". ");
-    return; // Stop execution if there are errors
+    return; 
   }
 
-  // Check hardcoded credentials
   if (email === hardcodedEmail && password === hardcodedPassword) {
-    // Successful login, redirect to home page
-    window.location.href = "home.html"; // Adjust the URL as needed
+    window.location.href = "home.html"; 
   } else {
-    // Invalid credentials, show error message
     error_message.innerText = "Invalid username or password";
     email_input.parentElement.classList.add('incorrect');
     password_input.parentElement.classList.add('incorrect');
